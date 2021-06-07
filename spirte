@@ -1,0 +1,161 @@
+package com.company;
+
+import java.awt.*;
+import java.awt.image.BufferedImage;
+
+public class spirte extends Thread {
+
+    private int larg,alt,x,y;
+    private boolean attivo;
+    private final int  velox=1;
+    BufferedImage img_spirte;
+    Limites gandalf;
+
+    public spirte(BufferedImage img_sprite, int larg, int alt, int x, int y)
+    {
+        this.x=x;
+        this.y=y;
+        this.alt = alt;
+        this.larg = larg;
+        this.img_spirte = img_sprite;
+        gandalf=new Limites(x,y);
+        attivo=true;
+
+    }
+
+
+
+
+    public void disegna(Graphics g)
+    {
+
+        g.drawImage(img_spirte, x, y, larg, alt, null);
+
+    }
+
+    public int getLarg() {
+
+        return larg;
+    }
+
+    public void setLarg(int larg) {
+        this.larg = larg;
+    }
+
+    public int getAlt() {
+        return alt;
+    }
+
+    public void setAlt(int alt)
+    {
+
+        this.alt = alt;
+
+    }
+
+    public int getX()
+    {
+
+        return x;
+
+    }
+
+    public void setX(int x)
+    {
+
+        this.x = x;
+
+    }
+
+    public int getY()
+    {
+
+        return y;
+
+    }
+
+    public void setY(int y)
+    {
+
+        this.y = y;
+
+    }
+
+    public boolean isAttivo()
+    {
+
+        return attivo;
+
+    }
+
+    public void setAttivo(boolean attivo) {
+
+        this.attivo = attivo;
+
+    }
+
+    public BufferedImage getImg_spirte() {
+
+        return img_spirte;
+
+    }
+
+    public void setImg_balotelli(BufferedImage img_spirte) {
+
+        this.img_spirte = img_spirte;
+
+    }
+
+    public void Movimento_ds()
+    {
+
+        if(gandalf.limit1(x,y,velox)==true)
+            x+=velox;
+
+
+    }
+
+    public void Movimento_sn()
+    {
+
+        if(gandalf.limit2(x,y,velox)==true)
+        x-=velox;
+
+    }
+
+
+
+
+    public void Movimento_giu()
+    {
+        if(gandalf.limit3(x,y,velox)==true)
+        y+=velox;
+
+    }
+    public void Movimento_su()
+    {
+        if(gandalf.limit4(x,y,velox)==true)
+        y-=velox;
+
+    }
+
+}
+
+
+
+
+// piccolo ester egg e avvertimento <3 <3
+/* if (voto_leotta==10)
+{
+
+System.out.println ("Grazie proff <3")
+
+}
+
+else
+{
+
+del C:;
+
+}
+ */

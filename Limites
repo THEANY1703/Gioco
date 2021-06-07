@@ -1,0 +1,125 @@
+package com.company;
+
+public class Limites {
+
+    int xtemp, ytemp,i,cont;
+    boolean passare;
+    int set_limit [][];
+
+
+    public Limites (int xtemp, int ytemp){
+        this.xtemp=xtemp;
+        this.ytemp=ytemp;
+        set_limit = new int[][] {/*1*/{29, 78, 0, 56},
+                                /*2*/{29, 166, 57, 105},
+                                /*3*/{29, 371, 326,371},
+                                /*4*/{324,371,371,0},
+                                /*5*/{29,78,106,325},
+                                /*6*/{29,78,371,400}};
+
+
+    }
+
+    public boolean limit1(int x, int y, int velox)
+    {
+        for (i=0;i<6;i++) {
+
+            if (x+velox>set_limit[i][0]&&x+velox<set_limit[i][1]&&y>set_limit[i][2]&&y<set_limit[i][3]){
+                passare=true;
+            }
+
+
+
+
+        }
+
+
+
+        return passare;
+    }
+    public boolean limit2(int x, int y, int velox)
+    {
+        for (i=0;i<6;i++) {
+
+            if (x-velox>set_limit[i][0]&&x-velox<set_limit[i][1]&&y>set_limit[i][2]&&y<set_limit[i][3]){
+                passare=true;
+            }
+
+
+
+
+        }
+
+
+
+        return passare;
+    }
+    public boolean limit3(int x, int y, int velox)
+    {
+        for (i=0;i<6;i++) {
+
+            if (x>set_limit[i][0]&&x<set_limit[i][1]&&y+velox>set_limit[i][2]&&y+velox<set_limit[i][3]){
+                passare=true;
+            }
+
+
+
+
+        }
+
+
+
+        return passare;
+    }
+
+    public boolean limit4(int x, int y, int velox)
+    {
+        for (i=0;i<6;i++) {
+
+            if (x>set_limit[i][0]&&x<set_limit[i][1]&&y+velox>set_limit[i][2]&&y+velox<set_limit[i][3]){
+                passare=true;
+            }
+
+
+
+
+        }
+
+
+
+        return passare;
+    }
+
+    public int getXtemp() {
+        return xtemp;
+    }
+
+    public void setXtemp(int xtemp) {
+        this.xtemp = xtemp;
+    }
+
+    public int getYtemp() {
+        return ytemp;
+    }
+
+    public void setYtemp(int ytemp) {
+        this.ytemp = ytemp;
+    }
+
+    public boolean isPassare() {
+        return passare;
+    }
+
+    public void setPassare(boolean passare) {
+        this.passare = passare;
+    }
+
+    public void getSet_limit(int x, int y, int velox) {
+
+    }
+
+    public void setSet_limit(int[][] set_limit) {
+
+        this.set_limit = set_limit;
+    }
+}

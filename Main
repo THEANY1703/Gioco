@@ -1,0 +1,61 @@
+package com.company;
+
+import Test.Limites;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.image.BufferStrategy;
+import java.awt.image.BufferedImage;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class Main extends Play {
+
+    private static int Alt = 439;
+    private static int larg = 415;
+    private static String Nome_Finestra= "Project School";
+
+    // uaglio bello sto codice
+
+    public static void  main(String[] args) throws IOException {
+
+        Play gioco= new Play();
+        Dimension Dimensione_finestra = new Dimension(larg,Alt);
+
+        JFrame Finestra_gioco = new JFrame(Nome_Finestra);
+        JPanel pane1 = new JPanel();
+
+
+
+
+
+
+
+        Finestra_gioco.setPreferredSize(Dimensione_finestra);
+        Finestra_gioco.setMaximumSize(Dimensione_finestra);
+        Finestra_gioco.setResizable(true);
+
+        Finestra_gioco.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        //gioco.disegnasfondo();
+
+        Finestra_gioco.add(gioco);
+
+
+
+
+        Finestra_gioco.addKeyListener(gioco);
+        Finestra_gioco.pack();
+        Finestra_gioco.setVisible(true);
+
+
+
+        Thread thread_gioco = new Thread(gioco);
+        thread_gioco.start();
+
+
+
+}}

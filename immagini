@@ -1,0 +1,36 @@
+package com.company;
+
+import javax.imageio.ImageIO;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
+import java.net.URL;
+import java.util.Objects;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+public class immagini {
+
+    BufferedImage image;
+
+    public BufferedImage  caricaImmagine(String posizione) {
+
+
+
+        try {
+
+
+            image = ImageIO.read(getClass().getResource(posizione));
+            System.out.println("Immagine caricata alla posizione: "+posizione+" caricata correttamente!");
+
+        }catch (IOException ex)
+        {
+
+            Logger.getLogger(immagini.class.getName()).log(Level.SEVERE,null,ex);
+        }
+
+        return image;
+
+    }
+}
